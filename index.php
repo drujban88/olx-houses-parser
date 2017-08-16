@@ -156,64 +156,74 @@ fclose($csv);
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <title>OLX parser</title>
-  <link rel="stylesheet" href="index.css">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+  <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/paper/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">     
 
 </head>
 <body>
-  <table>
-    <tbody>
-      <tr id="labels">
-        <td>Номер</td>
-        <td>Заголовок</td>
-        <td>Локация</td>
-        <td>Дата публикации</td>
-        <td>ID</td>
-        <td class="price">Цена(грн/$)</td>
-        <td>Описание</td>
-        <td>Кто сдает</td>
-        <td>Тип квартиры</td>
-        <td>Количество комнат</td>
-        <td>Площадь</td>
-        <td>Жилая площадь</td>
-        <td>Площадь кухни</td>
-        <td>Тип дома</td>
-        <td>Этаж</td>
-        <td>Этажность</td>
-        <td>Первая картинка</td>
-        <td>Вторая картинка</td>
-        <td>Третья картинка</td>
-      </tr>
-<?php
-$id = 1;
-foreach ($results as $result){
-  echo('
-      <tr>
-        <td>'.$id++.'</td>
-        <td><a href="'.$result['src'].'" target="_blank">'. $result['name'] .'</a></td>
-        <td>'. $result['location'] .'</td>
-        <td>'. $result['date'] .'</td>
-        <td>'. $result['id'] .'</td>
-        <td class="price"><p>'. $result['price'] .'</p></td>
-        <td>'. $result['description'] .'</td>
-        <td>'. $result['fromWho'] .'</td>
-        <td>'. $result['flatType'] .'</td>
-        <td>'. $result['colRooms'] .'</td>
-        <td>'. $result['square'] .'</td>
-        <td>'. $result['lifeSquare'] .'</td>
-        <td>'. $result['kitchenSquare'] .'</td>
-        <td>'. $result['houseType'] .'</td>
-        <td>'. $result['floor'] .'</td>
-        <td>'. $result['numStoreys'] .'</td>
-        <td>'. (($result['img1'] == 'не указано')?$result['img1']:'<img src="'.$result['img1'].'">') .'</td>
-        <td>'. (($result['img2'] == 'не указано')?$result['img2']:'<img src="'.$result['img2'].'">') .'</td>
-        <td>'. (($result['img3'] == 'не указано')?$result['img3']:'<img src="'.$result['img3'].'">') .'</td>
-    </tr>
-  ');
-}
-?>
-    </tbody>
-  </table>
+<div class="table-responsive">
+    <table class="table table-hover table-striped">
+        <thead>
+            <tr>
+                <td>Номер</td>
+                <td>Заголовок</td>
+                <td>Локация</td>
+                <td>Дата публикации</td>
+                <td>ID</td>
+                <td>Цена(грн/$)</td>
+                <td>Описание</td>
+                <td>Кто сдает</td>
+                <td>Тип квартиры</td>
+                <td>Количество комнат</td>
+                <td>Площадь</td>
+                <td>Жилая площадь</td>
+                <td>Площадь кухни</td>
+                <td>Тип дома</td>
+                <td>Этаж</td>
+                <td>Этажность</td>
+                <td>Первая картинка</td>
+                <td>Вторая картинка</td>
+                <td>Третья картинка</td>
+            </tr>
+        <thead>
+        <tbody>
+        <?php
+        $id = 1;
+        foreach ($results as $result){
+        echo('
+            <tr>
+                <td>'.$id++.'</td>
+                <td><a href="'.$result['src'].'" target="_blank">'. $result['name'] .'</a></td>
+                <td>'. $result['location'] .'</td>
+                <td>'. $result['date'] .'</td>
+                <td>'. $result['id'] .'</td>
+                <td class="price"><p>'. $result['price'] .'</p></td>
+                <td>'. $result['description'] .'</td>
+                <td>'. $result['fromWho'] .'</td>
+                <td>'. $result['flatType'] .'</td>
+                <td>'. $result['colRooms'] .'</td>
+                <td>'. $result['square'] .'</td>
+                <td>'. $result['lifeSquare'] .'</td>
+                <td>'. $result['kitchenSquare'] .'</td>
+                <td>'. $result['houseType'] .'</td>
+                <td>'. $result['floor'] .'</td>
+                <td>'. $result['numStoreys'] .'</td>
+                <td>'. (($result['img1'] == 'не указано')?$result['img1']:'<img src="'.$result['img1'].'">') .'</td>
+                <td>'. (($result['img2'] == 'не указано')?$result['img2']:'<img src="'.$result['img2'].'">') .'</td>
+                <td>'. (($result['img3'] == 'не указано')?$result['img3']:'<img src="'.$result['img3'].'">') .'</td>
+            </tr>
+        ');
+        }
+        ?>
+        </tbody>
+    </table>
+</div>
+
+
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="index.js"></script>
 </body>
 </html>

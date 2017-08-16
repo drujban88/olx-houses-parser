@@ -1,43 +1,7 @@
 html,
 body{
   width: 100%;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
 }
-
-table{ border-collapse: collapse; }
-
-tr{
-  transition: all .3s ease-in-out;
-  text-align: center;
-  cursor: pointer;
-}
-
-td > a{
-  color: dodgerblue;
-  transition: all .3s ease-in-out;
-}
-
-tr#labels > td{ border: 1px solid dodgerblue; }
-
-tr#labels{
-  background: dodgerblue;
-  color: white;
-}
-
-tr:hover{
-   background: dodgerblue;
-   color: white;
-}
-
-tr:hover > td > a{ color: white; }
-
-td{ border: 1px dashed dodgerblue; }
-
-td.price{
-  background-color: indianred;
-  color: white;
-  padding: 50px;
-}
-
-td.price > p{ width: 100%; }
